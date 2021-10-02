@@ -1,0 +1,76 @@
+.blog{
+    width: 100%;
+    text-align: left;
+    padding: 0 2%;
+}
+
+.blog h1{
+    margin-top: 40px;
+    font-size: 64px;
+}
+
+.posts{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.post_comp{
+    text-align: left;
+    margin: 40px 0;
+    padding-bottom: 20px;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 1px 14px 29px 7px rgba(171,171,171,0.69);
+    -webkit-box-shadow: 1px 14px 29px 7px rgba(171,171,171,0.69);
+    -moz-box-shadow: 1px 14px 29px 7px rgba(171,171,171,0.69);
+}
+
+.image{
+    width: 100%;
+    max-height: 300px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.title{
+    padding: 0 2%;
+    font-family: 'Staatliches', cursive;
+    font-size: 42px;
+    margin: 10px 0;
+    color: #000;
+}
+
+.tags{
+    padding: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.tags a{
+    font-size: 18px;
+    margin-right: 5px;
+    background-color: #e76f51;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+    .blog{
+        margin-top: 60px;
+    }
+    .posts{
+        flex-direction: column;
+    }
+    .post_comp{
+        width: 100%;
+    }
+    .image{
+        max-height: 400px;
+        height: 400px;
+    }
+}

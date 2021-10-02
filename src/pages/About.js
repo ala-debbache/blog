@@ -1,0 +1,17 @@
+import React from "react";
+
+class About extends React.Component {
+    constructor(props){
+        super(props);
+        document.title = "About";
+    }
+    render(){
+        return (
+            <div className="about">
+                <h1>About</h1>
+            </div>
+        );
+    }
+}
+
+export default About;
