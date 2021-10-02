@@ -9,3 +9,16 @@ export async function getPost(id){
     .then((data)=>data.json());
     return data;
 }
+
+export async function createPost(post){
+    const postCreated = await fetch("https://powerful-ridge-32851.herokuapp.com/posts",{
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(post)
+    }).then((data)=>data.json());
+    return postCreated;
+}
