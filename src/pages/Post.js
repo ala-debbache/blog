@@ -31,18 +31,21 @@ class Blog extends React.Component {
             );
         }else{
             const { title, description, image, tags } = this.state.post;
-            const tags_array = tags.map((e)=>{
-                return (
-                    <a key={e} href={e}>{e}</a>
-                );
-            });
+            let tags_array = [];
+            if(tags.length>0){
+                tags_array = tags.map((e)=>{
+                    return (
+                        <a key={e} href={e}>{e}</a>
+                    );
+                });
+            }
             return (
                 <div className={styles.post}>
                     <h2 className={styles.title}>{title}</h2>
                     <img className={styles.image} src={image} alt={title} />
                     <p className={styles.desc}>{description}</p>
                     <div className={styles.tags}>
-                        {tags_array}
+                        {tags_array.length>0? tags_array: ""}
                     </div>
                 </div>
             );

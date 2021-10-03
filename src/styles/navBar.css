@@ -36,6 +36,7 @@
 @media screen and (max-width: 1280px){
     .navbar{
         flex-direction: column;
+        height: 15vh;
     }
     .navbar h1{
         width: 100%;
