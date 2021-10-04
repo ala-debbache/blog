@@ -10,9 +10,11 @@ class Tag extends React.Component {
         this.state = {
             posts: []
         };
+        this.getPosts=this.getPosts.bind(this)
         document.title = "Loding ...";
     }
-    componentDidMount(){
+
+    getPosts(){
         const tag = this.props.match.params.tag;
         getPostsByTag(tag).then((data)=>{
             this.setState({
@@ -21,6 +23,18 @@ class Tag extends React.Component {
             document.title = tag;
         });
     }
+
+    componentDidMount(){
+        this.getPosts();
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.match.params.tag !== this.props.match.params.tag){
+            this.getPosts();
+        }
+    }
+
+
     render(){
         if(this.state.posts.length===0){
             return (
