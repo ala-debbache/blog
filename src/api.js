@@ -4,6 +4,13 @@ export async function getPosts(){
     return data;
 }
 
+export async function getPostsByTag(tag){
+    let data = await fetch(`https://powerful-ridge-32851.herokuapp.com/tags/${tag}`)
+    .then((data)=>data.json());
+    return data;
+}
+
+
 export async function getPost(id){
     let data = await fetch(`https://powerful-ridge-32851.herokuapp.com/posts/${id}`)
     .then((data)=>data.json());

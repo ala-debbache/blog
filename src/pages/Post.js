@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {getPost} from '../api';
 import styles from '../styles/modules/post.module.css';
 
-class Blog extends React.Component {
+class Post extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -35,7 +36,9 @@ class Blog extends React.Component {
             if(tags.length>0){
                 tags_array = tags.map((e)=>{
                     return (
-                        <a key={e} href={e}>{e}</a>
+                        <Link key={e} to={`/tags/${e}`}>
+                            {e}
+                        </Link>
                     );
                 });
             }
@@ -53,4 +56,4 @@ class Blog extends React.Component {
     }
 }
 
-export default Blog;
+export default Post;

@@ -6,9 +6,9 @@ const PostComponent = (props) => {
     const { _id, title, image, tags } = props.post;
     const tags_array = tags.map((e)=>{
         return (
-            <a key={e} href={e}>
+            <Link key={e} to={`/tags/${e}`}>
                 {e}
-            </a>
+            </Link>
         );
     });
     return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PostComponent from '../components/postComponent';
-import {getPosts} from '../api';
+import {getPostsByTag} from '../api';
 import styles from '../styles/modules/blog.module.css';
 
-class Blog extends React.Component {
+class Tag extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -13,11 +13,12 @@ class Blog extends React.Component {
         document.title = "Loding ...";
     }
     componentDidMount(){
-        getPosts().then((data)=>{
+        const tag = this.props.match.params.tag;
+        getPostsByTag(tag).then((data)=>{
             this.setState({
                 posts: data
             });
-            document.title = "Blog";
+            document.title = tag;
         });
     }
     render(){
@@ -45,4 +46,4 @@ class Blog extends React.Component {
     }
 }
 
-export default withRouter(Blog);
+export default withRouter(Tag);

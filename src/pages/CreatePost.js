@@ -39,6 +39,9 @@ class CreatePost extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        this.setState({
+            errors: {}
+        });
         let tags = [];
         if(this.state.tags!==""){
             tags = this.state.tags.split(" ");
